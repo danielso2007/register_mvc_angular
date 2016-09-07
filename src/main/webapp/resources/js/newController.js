@@ -10,10 +10,11 @@ newControllerApp.controller("newController",function($scope, $window, $http){
 		response.success(function(data, status, headers, config) {
 	
 		 if(data.id == 1){
+			 Materialize.toast(data.msg, 4000);
 			 $scope.object = {};
 		 } else{
 			 console.error(data);
-			 $window.alert(data.mensagem);
+			 $window.alert(data.msg);
 		 }
 
 		});

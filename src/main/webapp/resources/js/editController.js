@@ -11,6 +11,7 @@ editControllerApp.controller("editController",function($scope, $window, $http){
 		response.success(function(data, status, headers, config) {
 	
 		 if(data.id == 1){
+			 Materialize.toast(data.msg, 4000);
 			 window.location.href = "../list";
 		 } else{
 			 console.error(data);

@@ -8,55 +8,59 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Editar Usuário</title>
 
-<style type="text/css">
-
-	label{
-	    display: inline-block;
-	    width: 90px;
-	}
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 	
-</style>
-<script type="text/javascript" src="<spring:url value="/resources/js/angular.min.js"/>"></script>
-<script type="text/javascript" src="<spring:url value="/resources/js/editController.js"/>"></script>
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
 <body>
 
-<form ng-controller="editController">
+<form class="row" ng-controller="editController">
 
-	<h2>Editar Usuário</h2>
-	<br/>
+<h1>Editar Usuário</h1>
 
-	<label for="input-codigo" >Id:</label>
-	<input type="text" id="input-codigo" style="width:80px;" ng-model="object.id" readonly="readonly"  ng-init="object.id='${userModel.id}'"/>
-	
-	<br/><br/>
-		
-	<label for="input-nome" >Nome:</label>
-	<input type="text" id="input-nome" style="width:220px;" ng-model="object.name"  ng-init="object.name='${userModel.name}'"/>
-	
-	<br/><br/>
-
-	<label for="input-login">E-mail:</label>
-	<input type="text" id="input-login" style="width:120px;" ng-model="object.email" ng-init="object.email='${userModel.email}'"/>
-	
-	<br/><br/>
-	
-	<label for="input-senha">Senha:</label>
-	<input type="password" id="input-senha" style="width:120px;" ng-model="object.password" ng-init="object.password='${userModel.password}'"/>
-	
-	<br/><br/>
-	
-	<p>
-		<a href= "../list">Voltar</a>
-		
-		<input type="button" value="Salvar" ng-click="save()"/>
-				
-	</p>
-	
+ <div class="col s4">
+      <div class="row">
+       <div class="input-field col s4">
+            <label for="input-id" >Id:</label>
+			<input type="text" id="input-id" ng-model="object.id" readonly="readonly" ng-init="object.id='${userModel.id}'"/>
+        </div>
+        <div class="input-field col s8">
+            <label for="input-name" >Nome:</label>
+			<input type="text" id="input-name" ng-model="object.name" ng-init="object.name='${userModel.name}'"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+           <label for="input-email">E-mail:</label>
+	       <input type="text" id="input-email" ng-model="object.email" ng-init="object.email='${userModel.email}'"/>
+        </div>
+        <div class="input-field col s6">
+           <label for="input-password">Senha:</label>
+	       <input type="password" id="input-password" ng-model="object.password" ng-init="object.password='${userModel.password}'"/>
+        </div>
+      </div>
+      <div class="row">
+		<a href= "../" class="waves-effect waves-light btn"><i class="material-icons left">skip_previous</i>Voltar</a>
+		<a ng-click="save()" class="waves-effect waves-light btn"><i class="material-icons left">input</i>Salvar</a>
+	   </div>
+  </div>
+  
 </form>
 
+   	<!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
+
+	<script type="text/javascript" src="<spring:url value="/resources/js/angular.min.js"/>"></script>
+	<script type="text/javascript" src="<spring:url value="/resources/js/editController.js"/>"></script>
 
 
 </body>
