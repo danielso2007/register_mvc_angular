@@ -128,7 +128,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>Sistema</finalName>
+		<finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
